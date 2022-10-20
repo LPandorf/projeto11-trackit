@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 //import Login from "./telas/Login";
 //import Cadastro from "./telas/Cadastro";
 //import Habitos from "./telas/Habitos";
-import Historico from "./telas/Historico";
+//import Historico from "./telas/Historico";
+//import Hoje from "./telas/Hoje";
 
 export default function App(){
     return (
@@ -13,7 +14,7 @@ export default function App(){
             <GlobalStyle/>
             <BrowserRouter>
                 <Routes>
-                        <Route path="/" element={<Historico/>}/>
+                        
                 </Routes>
             </BrowserRouter>
         </>
@@ -23,7 +24,7 @@ export default function App(){
 /*
 <Route path="/hoje" element={<Hoje/>}/>
 <Route path="/habitos" element={<Habitos/>}/>
-historico
+<Route path="/historico" element={<Historico/>}/>
 <Route path="/" element={<Login/>}/>
 <Route path="/cadastro" element={<Cadastro/>}/>
 
