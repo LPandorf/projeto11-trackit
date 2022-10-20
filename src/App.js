@@ -3,7 +3,8 @@ import GlobalStyle from "./assets/GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //import Login from "./telas/Login";
-import Cadastro from "./telas/Cadastro";
+//import Cadastro from "./telas/Cadastro";
+import Habitos from "./telas/Habitos";
 
 export default function App(){
     return (
@@ -11,7 +12,7 @@ export default function App(){
             <GlobalStyle/>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Cadastro/>}/>    
+                        <Route path="/" element={<Habitos/>}/>
                 </Routes>
             </BrowserRouter>
         </>
@@ -20,9 +21,9 @@ export default function App(){
 
 /*
 <Route path="/hoje" element={<Hoje/>}/>
-<Route path="/habitos" element={<Habitos/>}/>
+
 <Route path="/historico" element={<Historico/>}/>
 <Route path="/" element={<Login/>}/>
-
-cadastro
+<Route path="/cadastro" element={<Cadastro/>}/>
+habitos
 */
