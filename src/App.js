@@ -11,7 +11,7 @@ export default function App(){
             <GlobalStyle/>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/cadastro" element={<Cadastro/>}/>    
+                    <Route path="/" element={<Cadastro/>}/>    
                 </Routes>
             </BrowserRouter>
         </>
@@ -24,5 +24,5 @@ export default function App(){
 <Route path="/historico" element={<Historico/>}/>
 <Route path="/" element={<Login/>}/>
 
-
+cadastro
 */

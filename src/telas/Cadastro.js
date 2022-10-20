@@ -8,6 +8,8 @@ export default function Cadastro(){
             <Wrapper>
                 <Email>email</Email>
                 <Senha>senha</Senha>
+                <Nome>nome</Nome>
+                <Foto>foto</Foto>
                 <Botão>Entrar</Botão>
                 <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
             </Wrapper>
@@ -50,6 +52,36 @@ const Senha= styled.div`
     justify-content: flex-start;
     padding: 15px;
 `
+
+const Nome= styled.div`
+    color:#DBDBDB;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 303px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+`
+const Foto= styled.div`
+    color:#DBDBDB;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 303px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+`
+
 const Botão=styled.div`
 	color: white;
 	background: #52B6FF;
