@@ -1,12 +1,23 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+//import Barracircular from "/Barracircular.js"
+
 
 //falta a barra de progresso circular
 
-export default function Navbar(){
+export default function Footer(){
     return(
         <Wrapper>
-            <Titulo>Hábitos</Titulo>
-            <Titulo>Histórico</Titulo>
+            <Link to={`/habitos`}>
+                <Titulo>Hábitos</Titulo>
+            </Link>
+
+            
+            
+
+            <Link to={`/historico`}>
+                <Titulo>Histórico</Titulo>
+            </Link>
         </Wrapper>
     )
 }
@@ -42,3 +53,4 @@ const Titulo = styled.div`
     text-align: center;
     color: #52B6FF;
 `
+//<Barracircular></Barracircular>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
+import { Link } from "react-router-dom";
 
 export default function Cadastro(){
     return (
@@ -11,7 +12,9 @@ export default function Cadastro(){
                 <Nome>nome</Nome>
                 <Foto>foto</Foto>
                 <Botão>Entrar</Botão>
-                <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
+                <Link to={`/`}>
+                    <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
+                </Link>
             </Wrapper>
         </>
     )

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
+import { Link } from "react-router-dom";
 
 export default function Login(){
     return (
@@ -9,12 +10,14 @@ export default function Login(){
                 <Email>email</Email>
                 <Senha>senha</Senha>
                 <Botão>Entrar</Botão>
-                <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
+                <Link to={`/cadastro`} >
+                    <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
+                </Link>
             </Wrapper>
         </>
     )
 }
-
+//key={}
 const Wrapper=styled.div`
     display: flex;
     flex-direction: column;
