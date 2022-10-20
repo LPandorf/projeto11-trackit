@@ -16,10 +16,15 @@ export default function Historico(){
 }
 
 const Corpo = styled.div`
+    margin-top: 70px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #E5E5E5;
+    padding: 20px;
 `
 
 const Titulo = styled.div`
@@ -33,6 +38,7 @@ const Titulo = styled.div`
     font-weight: 400;
     font-size: 22.976px;
     line-height: 29px;
+    margin-bottom: 20px;
 `
 const Texto= styled.div`
     width: 338px;

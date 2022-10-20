@@ -11,6 +11,7 @@ export default function Navbar(){
 }
 
 const Wrapper = styled.div`
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
