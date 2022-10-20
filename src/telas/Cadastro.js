@@ -11,7 +11,7 @@ export default function Cadastro(){
                 <Nome>nome</Nome>
                 <Foto>foto</Foto>
                 <Botão>Entrar</Botão>
-                <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
+                <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
             </Wrapper>
         </>
     )
@@ -94,7 +94,7 @@ const Botão=styled.div`
     text-align: center;
 `
 
-const Cadastrar=styled.div`
+const Cadastrado=styled.div`
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
