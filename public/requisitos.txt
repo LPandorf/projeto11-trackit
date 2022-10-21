@@ -7,7 +7,7 @@
     - [X]  Faça commits a cada funcionalidade implementada
     - [ ]  Para estados globais (como usuário logado e progresso do dia) utilize **ContextAPI**.
     - [ ]  Para os demais estados que não forem globais (necessários para muitos elementos da aplicação), você pode continuar utilizando estados e props 😄
-    - [ ]  Obrigatório fazer deploy
+    - [X]  Obrigatório fazer deploy
 - Layout
     - [X]  Aplicar layout, seguindo figma fornecido
         
