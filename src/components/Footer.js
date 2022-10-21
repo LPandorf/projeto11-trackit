@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-//import Barracircular from "/Barracircular.js"
+import {CircularProgressbar, buildStyles} from "react-circular-progressbar";
+import 'react-circular-progressbar/dist/styles.css';
 
-
-//falta a barra de progresso circular
 
 export default function Footer(){
     return(
@@ -11,10 +10,23 @@ export default function Footer(){
             <Link to={`/habitos`}>
                 <Titulo>Hábitos</Titulo>
             </Link>
-
-            
-            
-
+            <BarraCircular>
+                <CircularProgressbar
+                    value={70} 
+                    maxValue={100} 
+                    text="Hoje"
+                    background
+                    backgroundPadding={7}
+                    styles={
+                        buildStyles({
+                            backgroundColor: "#52b6ff",
+                            textColor: "#ffffff",
+                            pathColor: "#ffffff",
+                            trailColor: "#52b6ff"
+                        })
+                    }
+                />
+            </BarraCircular>
             <Link to={`/historico`}>
                 <Titulo>Histórico</Titulo>
             </Link>
@@ -53,4 +65,8 @@ const Titulo = styled.div`
     text-align: center;
     color: #52B6FF;
 `
-//<Barracircular></Barracircular>
+const BarraCircular= styled.div`
+    width: 100px;
+    height: 100px;
+    margin-bottom:60px;
+`
