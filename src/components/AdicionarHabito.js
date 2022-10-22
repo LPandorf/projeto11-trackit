@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import Inputs from "../constants/Inputs";
+import { useState } from "react";
 
 export default function AdicionarHabito(){
+    const [novoHabito, setNovoHabito]=useState("");
     return (
         <Wrapper>
-            <NomeDoHabito>nome do hábito</NomeDoHabito>
+            <Inputs type="text" placeholder={"Nome do habito"} onChange={(e)=> setNovoHabito(e.target.value)} />
             <LadoALado>
                 <Dia>D</Dia>
                 <Dia>S</Dia>

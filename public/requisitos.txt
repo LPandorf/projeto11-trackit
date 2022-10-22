@@ -6,7 +6,7 @@
     - [X]  Versionamento usando Git é obrigatório, crie um **repositório público** no seu perfil do GitHub
     - [X]  Faça commits a cada funcionalidade implementada
     - [ ]  Para estados globais (como usuário logado e progresso do dia) utilize **ContextAPI**.
-    - [ ]  Para os demais estados que não forem globais (necessários para muitos elementos da aplicação), você pode continuar utilizando estados e props 😄
+    - [X]  Para os demais estados que não forem globais (necessários para muitos elementos da aplicação), você pode continuar utilizando estados e props 😄
     - [X]  Obrigatório fazer deploy
 - Layout
     - [X]  Aplicar layout, seguindo figma fornecido
@@ -32,7 +32,7 @@
     - [X]  Topo e menu devem ter posicionamento fixo
     - [ ]  No topo deve ser exibida a foto do usuário conforme layout
         - **OBS**: Utilize **ContextAPI** para compartilhar o estado do usuário logado globalmente entre os componentes.
-    - [ ]  No menu, os 3 botões de Hábitos, Hoje e Histórico devem redirecionar o usuário para as rotas `/habitos`, `/hoje` e `/historico` respectivamente
+    - [X]  No menu, os 3 botões de Hábitos, Hoje e Histórico devem redirecionar o usuário para as rotas `/habitos`, `/hoje` e `/historico` respectivamente
     - [ ]  O botão de Hoje deve exibir uma barra de progresso circular indicando a porcentagem de conclusão de hábitos de hoje do usuário
         - 💡 **Dica**: utilize a biblioteca `react-circular-progressbar`
         - **OBS**: Esse progresso deve ser atualizado automaticamente conforme o usuário for concluindo os hábitos. Utilize **ContextAPI** para compartilhar esse estado globalmente entre os componentes.

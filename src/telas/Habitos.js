@@ -72,4 +72,5 @@ const Mais= styled.div`
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
+    padding: 10px;
 `

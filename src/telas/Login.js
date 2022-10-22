@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
+import Inputs from "../constants/Inputs";
+import { useState } from "react";
 
 export default function Login(){
+    const [email,setEmail]=useState(" ");
+    const [senha,setSenha]=useState(" ");
     return (
         <>
             <Logo />
             <Wrapper>
-                <Email>email</Email>
-                <Senha>senha</Senha>
+                <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
+                <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
                 <Botão>Entrar</Botão>
                 <Link to={`/cadastro`} >
                     <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
@@ -17,6 +21,7 @@ export default function Login(){
         </>
     )
 }
+
 //key={}
 const Wrapper=styled.div`
     display: flex;
@@ -25,34 +30,6 @@ const Wrapper=styled.div`
     justify-content: center;
 `
 
-const Email = styled.div`
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: #DBDBDB;
-    padding: 15px;
-`
-const Senha= styled.div`
-    color:#DBDBDB;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px;
-`
 const Botão=styled.div`
 	color: white;
 	background: #52B6FF;

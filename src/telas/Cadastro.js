@@ -1,16 +1,24 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
+import Inputs from "../constants/Inputs";
+import { useState } from "react";
 
 export default function Cadastro(){
+    
+    const [email,setEmail]=useState(" ");
+    const [senha,setSenha]=useState(" ");
+    const [nome,setNome]=useState(" ");
+    const [foto,setFoto]=useState(" ");
+
     return (
         <>
             <Logo />
             <Wrapper>
-                <Email>email</Email>
-                <Senha>senha</Senha>
-                <Nome>nome</Nome>
-                <Foto>foto</Foto>
+                <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
+                <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
+                <Inputs type="text" placeholder={"nome"} onChange={(e)=>setNome(e.target.value)} />
+                <Inputs type="text" placeholder={"foto"} onChange={(e)=>setFoto(e.target.value)} />
                 <Botão>Entrar</Botão>
                 <Link to={`/`}>
                     <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
@@ -25,64 +33,6 @@ const Wrapper=styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`
-
-const Email = styled.div`
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: #DBDBDB;
-    padding: 15px;
-`
-const Senha= styled.div`
-    color:#DBDBDB;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px;
-`
-
-const Nome= styled.div`
-    color:#DBDBDB;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px;
-`
-const Foto= styled.div`
-    color:#DBDBDB;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px;
 `
 
 const Botão=styled.div`
