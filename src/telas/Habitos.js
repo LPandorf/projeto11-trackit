@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Adicionar from "../components/Adicionar";
+import AdicionarHabito from "../components/AdicionarHabito";
+import Habito from "../components/Habito";
 
 export default function Habitos(){
     return(
@@ -12,8 +13,9 @@ export default function Habitos(){
                     <Titulo>Meus hábitos</Titulo>
                     <Mais>+</Mais>
                 </LadoALado>
-                <Adicionar/>
+                <AdicionarHabito/>
                 <Nenhum>Você não tem nenhum hábito cadastrado ainda. Adicione um para começar a trackear</Nenhum>
+                <Habito/>
             </Corpo>
             <Footer/>
         </>

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export default function Adicionar(){
+export default function Habito(){
     return (
         <Wrapper>
-            <NomeDoHabito>nome do hábito</NomeDoHabito>
+            <Titulo>Ler 1 capitulo por dia</Titulo>
+            <Lixinho><ion-icon name="trash-outline" ></ion-icon></Lixinho>
             <LadoALado>
                 <Dia>D</Dia>
                 <Dia>S</Dia>
@@ -17,41 +18,26 @@ export default function Adicionar(){
     )
 }
 
-const Wrapper= styled.div`
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 340px;
-    height: 180px;
+    height: 91px;
     background: #FFFFFF;
     border-radius: 5px;
-    margin-bottom: 20px;
-    padding:18px;
+    padding: 14px;
+    margin-top: 10px;
 `
 
-const NomeDoHabito= styled.div`
-    box-sizing: border-box;
-    width: 303px;
-    height: 45px;
-    background: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
+const Titulo=styled.div`
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 19.976px;
     line-height: 25px;
-    color: #DBDBDB;
+    color: #666666;
 `
 
-const LadoALado= styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-right: 5px;
-`
 
 const Dia= styled.div`
     width: 30px;
@@ -70,4 +56,18 @@ const Dia= styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+`
+
+const LadoALado=styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-right: 5px;
+`
+
+const Lixinho=styled.div`
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
 `
