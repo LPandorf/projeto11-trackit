@@ -1,25 +1,45 @@
 import styled from "styled-components";
 import Logo from "../components/Logo";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Inputs from "../constants/Inputs";
 import { useState } from "react";
+import axios from "axios";
+
+const URLbase='https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit';
 
 export default function Login(){
     const [email,setEmail]=useState(" ");
-    const [senha,setSenha]=useState(" ");
-    return (
-        <>
-            <Logo />
-            <Wrapper>
-                <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
-                <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
-                <Botão>Entrar</Botão>
-                <Link to={`/cadastro`} >
-                    <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
-                </Link>
-            </Wrapper>
-        </>
-    )
+    const [password,setSenha]=useState(" ");
+    const [avacar,setAvancar]=useState(false);
+
+    function FazerLogin(dados,setAvancar){
+        const promise= axios.post(`${URLbase}/auth/login`, dados);
+        promise.then(resposta =>{ console.log(resposta); localStorage.setItem('fazerLogin', JSON.stringify({token:resposta.data.token, image:resposta.data.image}))});
+        setAvancar(true);
+    }
+
+    const dados={
+        email,
+        password,
+    }
+    if(avacar){
+        return <Navigate to={`/habitos`}/>
+    }else{
+        return (
+            <>
+                <Logo />
+                <Wrapper>
+                    <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
+                    <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
+                    
+                    <Botão onClick={()=>FazerLogin(dados,setAvancar)}>Entrar</Botão>
+                    <Link to={`/cadastro`} >
+                        <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
+                    </Link>
+                </Wrapper>
+            </>
+        )
+    }
 }
 
 //key={}

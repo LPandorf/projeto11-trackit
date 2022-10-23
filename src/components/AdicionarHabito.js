@@ -4,24 +4,29 @@ import { useState } from "react";
 
 export default function AdicionarHabito(){
     const [novoHabito, setNovoHabito]=useState("");
-    return (
-        <Wrapper>
-            <Inputs type="text" placeholder={"Nome do habito"} onChange={(e)=> setNovoHabito(e.target.value)} />
-            <LadoALado>
-                <Dia>D</Dia>
-                <Dia>S</Dia>
-                <Dia>T</Dia>
-                <Dia>Q</Dia>
-                <Dia>Q</Dia>
-                <Dia>S</Dia>
-                <Dia>S</Dia>
-            </LadoALado>
-            <OpcoesFinais>
-                <Cancelar>Cancelar</Cancelar>
-                <Salvar>Salvar</Salvar>
-            </OpcoesFinais>
-        </Wrapper>
-    )
+    const [escondido,setEscondido]=useState(false);
+    if(escondido){
+        return (<></>);
+    }else{
+        return (
+            <Wrapper>
+                <Inputs type="text" placeholder={"Nome do habito"} onChange={(e)=> setNovoHabito(e.target.value)} />
+                <LadoALado>
+                    <Dia>D</Dia>
+                    <Dia>S</Dia>
+                    <Dia>T</Dia>
+                    <Dia>Q</Dia>
+                    <Dia>Q</Dia>
+                    <Dia>S</Dia>
+                    <Dia>S</Dia>
+                </LadoALado>
+                <OpcoesFinais>
+                    <Cancelar onClick={setEscondido}>Cancelar</Cancelar>
+                    <Salvar>Salvar</Salvar>
+                </OpcoesFinais>
+            </Wrapper>
+        )
+    }
 }
 
 const Wrapper= styled.div`

@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import img from "../assets/img/Captura de tela 2022-08-03 195204.png"
+//import img from "../assets/img/Captura de tela 2022-08-03 195204.png";
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 export default function Navbar(){
+    const user = useContext(UserContext);
     return(
         <Wrapper>
             TrackIt
-            <Foto src={img}></Foto>
+            <Foto src={user.tokenuser.image}></Foto>
         </Wrapper>
     )
 }

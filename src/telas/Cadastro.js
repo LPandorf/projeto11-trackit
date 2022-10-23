@@ -3,13 +3,21 @@ import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
 import Inputs from "../constants/Inputs";
 import { useState } from "react";
+import { FazerCadastro } from "../Apis";
 
 export default function Cadastro(){
     
     const [email,setEmail]=useState(" ");
-    const [senha,setSenha]=useState(" ");
-    const [nome,setNome]=useState(" ");
-    const [foto,setFoto]=useState(" ");
+    const [password,setSenha]=useState(" ");
+    const [name,setNome]=useState(" ");
+    const [image,setFoto]=useState(" ");
+
+    const dados={
+        email,
+        name,
+        image,
+        password,
+    }
 
     return (
         <>
@@ -19,7 +27,8 @@ export default function Cadastro(){
                 <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
                 <Inputs type="text" placeholder={"nome"} onChange={(e)=>setNome(e.target.value)} />
                 <Inputs type="text" placeholder={"foto"} onChange={(e)=>setFoto(e.target.value)} />
-                <Botão>Entrar</Botão>
+                
+                <Botão onClick={()=>FazerCadastro(dados)} >Entrar</Botão>
                 <Link to={`/`}>
                     <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
                 </Link>

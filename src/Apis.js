@@ -1,29 +1,39 @@
 import axios from "axios";
+import { useState } from "react";
+//import { Link , Navigate} from "react-router-dom";
+//import { UserProvider } from "./contexts/UserContext";
 
 const URLbase='https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit';
 
-function FazerCadastro(){
-    const promise= axios.post(`${URLbase}/auth/sign-up`);
-    return promise;
+const config = {
+	headers: {
+		"Authorization": `Bearer` 
+	}
 }
-function FazerLogin(){
-    const promise= axios.post(`${URLbase}/auth/login`);
-    return promise;
+
+//+ UserProvider.token
+
+function FazerCadastro(dados){
+    const [lugar,setLugar]=useState("");
+    console.log(dados);
+    const promise= axios.post(`${URLbase}/auth/sign-up`, dados);
+    promise.then(resposta =>{ console.log(resposta)});
 }
-function CriarHabito(){
-    const promise= axios.post(`${URLbase}/habits`);
+
+function CriarHabito({diasDaSemana, titulo}){
+    const promise= axios.post(`${URLbase}/habits`,{diasDaSemana, titulo, config});
     return promise;
 }
 function ListarHabitos(){
-    const promise= axios.get(`${URLbase}/habits`);
+    const promise= axios.get(`${URLbase}/habits`, {config});
     return promise;
 }
 function DeletarHabito(habitoId){
     const promise= axios.delete(`${URLbase}/habits/${habitoId}`);
     return promise;
 }
-function BuscarHabitosDeHoje(){
-    const promise= axios.get(`${URLbase}/habits/today`);
+function BuscarHabitosDeHoje({ dia}){
+    const promise= axios.get(`${URLbase}/habits/today`,{dia, config});
     return promise;
 }
 function MarcarHabitoComoFeito(habitoId){
@@ -39,4 +49,4 @@ function HistoricoHabitosDiario(){
     return promise;
 }
 
-export  {FazerCadastro, FazerLogin, CriarHabito, ListarHabitos, DeletarHabito, BuscarHabitosDeHoje, MarcarHabitoComoFeito, DesmarcarHabitoComoFeito, HistoricoHabitosDiario};
+export  {FazerCadastro, CriarHabito, ListarHabitos, DeletarHabito, BuscarHabitosDeHoje, MarcarHabitoComoFeito, DesmarcarHabitoComoFeito, HistoricoHabitosDiario};
