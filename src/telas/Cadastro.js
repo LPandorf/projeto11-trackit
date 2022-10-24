@@ -98,6 +98,7 @@ const Wrapper=styled.form`
         align-items: center;
         justify-content: center;
         text-align: center;
+        border:none;
     }
 `
 
@@ -126,7 +127,7 @@ const Input=styled.input`
     font-weight: 400;
     font-size: 19.976px;
     line-height: 25px;
-    color: #DBDBDB;
+    color: gray;
     margin-bottom: 10px;
     padding: 10px;
     display: flex;
@@ -134,3 +135,5 @@ const Input=styled.input`
     align-items: center;
     justify-content: center;
 `
+
+//deixei color igual a gray para facilitar a visualização, a correta é #DBDBDB
