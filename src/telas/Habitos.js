@@ -4,11 +4,29 @@ import Footer from "../components/Footer";
 import Habito from "../components/Habito";
 import { useState } from "react";
 import Inputs from "../constants/Inputs";
+//import { ListarHabitos } from "../Apis";, useEffect
 
 export default function Habitos(){
     const [Mostrar,setMostrar]=useState(false);
     const [novoHabito, setNovoHabito]=useState("");
+    /*const [listar,setListar]=useState([]);
 
+    useEffect(() => {
+        ListarHabitos()
+        .then((res) => {
+            setListar(res.data)
+            console.log(res.data)
+        })
+        
+    }, [])*/
+
+
+
+    let dias=[];
+    function AdicionaDia(d){
+        dias=dias+d;
+        console.log(dias);
+    }
     function fechar(){
         if(Mostrar===false){
             setMostrar(true);
@@ -16,8 +34,6 @@ export default function Habitos(){
             setMostrar(false);
         }
     }
-
-    console.log(Mostrar);
     if(Mostrar){
         return (
             <>
@@ -30,7 +46,7 @@ export default function Habitos(){
                     <AdicionarHabito>
                         <Inputs type="text" placeholder={"Nome do habito"} onChange={(e)=> setNovoHabito(e.target.value)} />
                         <LadoDias>
-                            <Dia>D</Dia>
+                            <Dia onClick={()=>AdicionaDia(0)} >D</Dia>
                             <Dia>S</Dia>
                             <Dia>T</Dia>
                             <Dia>Q</Dia>

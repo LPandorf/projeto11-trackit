@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import Inputs from "../constants/Inputs";
 import { useState } from "react";
 import axios from "axios";
+//import Loading from "../constants/Loading";
 
 const URLbase='https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit';
 
@@ -14,8 +15,11 @@ export default function Login(){
 
     function FazerLogin(dados,setAvancar){
         const promise= axios.post(`${URLbase}/auth/login`, dados);
+        //Loading(true);
         promise.then(resposta =>{ console.log(resposta); localStorage.setItem('fazerLogin', JSON.stringify({token:resposta.data.token, image:resposta.data.image}))});
+        promise.catch(error=>{alert((error).response.data.message)});
         setAvancar(true);
+        //Loading(false);
     }
 
     const dados={
@@ -29,10 +33,10 @@ export default function Login(){
             <>
                 <Logo />
                 <Wrapper>
-                    <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
-                    <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
+                    <Inputs   type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
+                    <Inputs   type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
                     
-                    <Botão onClick={()=>FazerLogin(dados,setAvancar)}>Entrar</Botão>
+                    <Botão onClick={()=>FazerLogin(dados,setAvancar)} id={"botao"}>Entrar</Botão>
                     <Link to={`/cadastro`} >
                         <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
                     </Link>
@@ -42,7 +46,7 @@ export default function Login(){
     }
 }
 
-//key={}
+//key={} id="input"
 const Wrapper=styled.div`
     display: flex;
     flex-direction: column;

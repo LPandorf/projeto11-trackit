@@ -23,12 +23,12 @@ export default function Cadastro(){
         <>
             <Logo />
             <Wrapper>
-                <Inputs type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
-                <Inputs type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
-                <Inputs type="text" placeholder={"nome"} onChange={(e)=>setNome(e.target.value)} />
-                <Inputs type="text" placeholder={"foto"} onChange={(e)=>setFoto(e.target.value)} />
+                <Inputs  type="text" placeholder={"email"} onChange={(e)=> setEmail(e.target.value)} />
+                <Inputs  type="text" placeholder={"senha"} onChange={(e)=>setSenha(e.target.value)} />
+                <Inputs  type="text" placeholder={"nome"} onChange={(e)=>setNome(e.target.value)} />
+                <Inputs  type="text" placeholder={"foto"} onChange={(e)=>setFoto(e.target.value)} />
                 
-                <Botão onClick={()=>FazerCadastro(dados)} >Entrar</Botão>
+                <Botão onClick={()=>FazerCadastro(dados)} id="botao">Entrar</Botão>
                 <Link to={`/`}>
                     <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
                 </Link>
@@ -36,7 +36,7 @@ export default function Cadastro(){
         </>
     )
 }
-
+//id="input"
 const Wrapper=styled.div`
     display: flex;
     flex-direction: column;

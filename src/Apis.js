@@ -1,5 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { UserContext } from "./contexts/UserContext";
+//import { useState } from "react";
+//import Loading from "./constants/Loading";
 //import { Link , Navigate} from "react-router-dom";
 //import { UserProvider } from "./contexts/UserContext";
 
@@ -7,16 +9,18 @@ const URLbase='https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit';
 
 const config = {
 	headers: {
-		"Authorization": `Bearer` 
+		"Authorization": `Bearer` + UserContext.token
 	}
 }
 
-//+ UserProvider.token
+//
 
 function FazerCadastro(dados){
-    const [lugar,setLugar]=useState("");
+    //Loading(true);
+    //const [lugar,setLugar]=useState("");
     console.log(dados);
     const promise= axios.post(`${URLbase}/auth/sign-up`, dados);
+    //Loading(false);
     promise.then(resposta =>{ console.log(resposta)});
 }
 

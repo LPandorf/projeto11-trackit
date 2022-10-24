@@ -17,16 +17,16 @@
     - [X]  Não é necessário fazer a versão para desktop, somente mobile
 - Tela Login (rota `/`)
     - [X]  Deve ser enviado o email e senha para a API conforme documentação
-    - [ ]  Enquanto estiver carregando, os campos e o botão devem ser desabilitados, conforme layout
+o   - [ ]  Enquanto estiver carregando, os campos e o botão devem ser desabilitados, conforme layout 
         - 💡 **Dica**: para fazer a animação de loading, utilize a biblioteca `react-loader-spinner`
     - [X]  Em caso de sucesso, o usuário deve ser redirecionado para a rota `/hoje`
-    - [ ]  Em caso de falha, deve ser exibido um `alert` informando o erro para o usuário e os campos/botão devem ser habilitados novamente
+a   - [ ]  Em caso de falha, deve ser exibido um `alert` informando o erro para o usuário e os campos/botão devem ser habilitados novamente
     - [X]  Ao clicar no link para se cadastrar, o usuário deve ser redirecionado para a rota `/cadastro`
 - Tela Cadastro (rota `/cadastro`)
     - [X]  Os dados devem ser enviados para a API conforme documentação
-    - [ ]  Enquanto estiver carregando, os campos e o botão devem ser desabilitados, conforme layout
+o   - [ ]  Enquanto estiver carregando, os campos e o botão devem ser desabilitados, conforme layout 
     - [X]  Em caso de sucesso, o usuário deve ser redirecionado para a rota `/` (rota de Login)
-    - [ ]  Em caso de falha, deve ser exibido um alert informando o erro para o usuário e os campos/botão devem ser habilitados novamente
+a   - [ ]  Em caso de falha, deve ser exibido um alert informando o erro para o usuário e os campos/botão devem ser habilitados novamente
     - [X]  Ao clicar no link para logar, o usuário deve ser redirecionado para a rota `/` (rota de Login)
 - Topo e Menu
     - [X]  Topo e menu devem ter posicionamento fixo
@@ -40,10 +40,10 @@
     - [ ]  Carregar os hábitos do usuário, mandando request pra API conforme documentação e exibindo abaixo conforme layout
     - [ ]  Ao clicar para deletar um hábito, deve ser exibido um `confirm` para confirmar se o usuário gostaria realmente de apagar o hábito. Se sim, deve ser enviado um request pra API conforme documentação e os hábitos recarregados logo em seguida.
     - [ ]  Caso o usuário não tenha nenhum hábito cadastrado, deve ser exibido o texto conforme layout
-    - [ ]  Ao clicar no botão de "+", deve-se exibir um formulário de cadastro de hábito logo abaixo do título conforme layout
+    - [X]  Ao clicar no botão de "+", deve-se exibir um formulário de cadastro de hábito logo abaixo do título conforme layout
     - [ ]  O usuário deve inserir o nome do hábito em um campo de texto e selecionar os dias da semana que deseja realizar o hábito conforme layout
     - [ ]  Ao salvar, devem ser enviados os dados para API conforme documentação
-    - [ ]  Enquanto estiver carregando, o campo de texto e o botão devem ser desabilitados, conforme layout. Os botões dos dias da semana devem ser desabilitados, porém não é necessária mudança visual durante o loading.
+o   - [ ]  Enquanto estiver carregando, o campo de texto e o botão devem ser desabilitados, conforme layout. Os botões dos dias da semana devem ser desabilitados, porém não é necessária mudança visual durante o loading.
     - [ ]  Em caso de sucesso, os campos devem ser limpos e reabilitados, o formulário deve ser escondido novamente e a lista de hábitos abaixo recarregada
     - [ ]  Em caso de erro, os campos devem ser reabilitados e um alerta deve indicar o problema para o usuário
     - [ ]  Ao Cancelar, o formulário deve ser escondido. Caso tenha dados já preenchidos, os mesmos devem ser mantidos caso o usuário reabra o formulário de criação.

@@ -5,6 +5,11 @@ import { useState } from "react";
 export default function AdicionarHabito(){
     const [novoHabito, setNovoHabito]=useState("");
     const [escondido,setEscondido]=useState(false);
+    let dias=[];
+    function AdicionaDia(d){
+        dias=dias+d;
+        console.log(dias);
+    }
     if(escondido){
         return (<></>);
     }else{
@@ -12,7 +17,7 @@ export default function AdicionarHabito(){
             <Wrapper>
                 <Inputs type="text" placeholder={"Nome do habito"} onChange={(e)=> setNovoHabito(e.target.value)} />
                 <LadoALado>
-                    <Dia>D</Dia>
+                    <Dia onClick={()=>AdicionaDia(0)} >D</Dia>
                     <Dia>S</Dia>
                     <Dia>T</Dia>
                     <Dia>Q</Dia>
