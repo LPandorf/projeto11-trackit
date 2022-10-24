@@ -65,6 +65,7 @@ export default function Habitos(){
                     <Mostrar/>
                 </Novos>
             </Corpo>
+            <Footer/>
         </>
     )
 }

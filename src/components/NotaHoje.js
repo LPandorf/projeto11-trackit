@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { InfoLogin, NovaRequisicao, HabitosHoje } from "../Contexts";
-import { warning } from "@remix-run/router";
 
 export default function NotaHoje(){
     const {infoLogin}=useContext(InfoLogin);

@@ -18,20 +18,6 @@ export default function Today(){
 
     const {token}=infoLogin;
 
-    const dayjs=require('dayjs');
-
-    const opcao={
-        month:'numeric',
-        weekday:'long',
-        day:'numeric',
-    }
-    
-    let agora=dayjs();
-    let hoje= new Date((agora.format('dddd, MM/DD')));
-    let diaTraducao=(hoje.toLocaleDateString('pt-br',opcao));
-    let remover=diaTraducao.replace('-feira','');
-    let renderizarDia= remover[0].toUpperCase();
-    //+remover.substr(1)
 
     useEffect(()=>{
         const promisse=axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today",
@@ -46,7 +32,20 @@ export default function Today(){
         });
     }, [novaRequisicao]);
 
-    for(x=0;x<habitosHoje.length;x++){
+    const dayjs=require('dayjs');
+    let agora=dayjs();
+    let hoje= new Date((agora.format('dddd, MM/DD')));
+    const opcao={
+        month:'numeric',
+        weekday:'long',
+        day:'numeric',
+    }
+    let diaTraducao=(hoje.toLocaleDateString('pt-br',opcao));
+    let remover=diaTraducao.replace('-feira','');
+    let renderizarDia= remover[0].toUpperCase();
+    //+remover.substr(1)
+
+    for(let x=0;x<habitosHoje.length;x++){
         if(habitosHoje[x].done===true){
             i++;
             porcento=Math.round((i/(habitosHoje.length)*100));

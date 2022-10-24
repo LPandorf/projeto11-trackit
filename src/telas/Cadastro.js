@@ -63,7 +63,7 @@ export default function Cadastro(){
                 />
                 <Input 
                     disabled={desabilitado}
-                    type="image"
+                    type="url"
                     value={image}
                     placeholder="foto"
                     required
@@ -129,4 +129,8 @@ const Input=styled.input`
     color: #DBDBDB;
     margin-bottom: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
