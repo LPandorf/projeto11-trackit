@@ -2,9 +2,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {CircularProgressbar, buildStyles} from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
-
+import { useContext } from "react";
+import { easeQuadInOut } from "d3-ease";
+import { Porcentagem } from "../Contexts";
+import AnimatedProgressProvider from "./AnimatedProgressProvider";
 
 export default function Footer(){
+    const {porcentagem}=useContext(Porcentagem);
+
     return(
         <Wrapper>
             <Link to={`/habitos`}>
@@ -12,21 +17,28 @@ export default function Footer(){
             </Link>
             <BarraCircular>
                 <Link to={`/hoje`}>
-                    <CircularProgressbar
-                        value={70} 
-                        maxValue={100} 
-                        text="Hoje"
-                        background
-                        backgroundPadding={7}
-                        styles={
-                            buildStyles({
-                                backgroundColor: "#52b6ff",
-                                textColor: "#ffffff",
-                                pathColor: "#ffffff",
-                                trailColor: "#52b6ff"
-                            })
-                        }
-                    />
+                    <AnimatedProgressProvider
+                        valueStart={0}
+                        valueEnd={porcentagem}
+                        duration={1.4}
+                        easingFunction={easeQuadInOut}
+                    >
+                        <CircularProgressbar
+                            value={value} 
+                            maxValue={100} 
+                            text="Hoje"
+                            background
+                            backgroundPadding={7}
+                            styles={
+                                buildStyles({
+                                    backgroundColor: "#52b6ff",
+                                    textColor: "#ffffff",
+                                    pathColor: "#ffffff",
+                                    trailColor: "#52b6ff"
+                                })
+                            }
+                        />
+                    </AnimatedProgressProvider>
                 </Link>
             </BarraCircular>
             <Link to={`/historico`}>
