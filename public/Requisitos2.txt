@@ -29,7 +29,7 @@
     - [ x]  Em caso de falha, deve ser exibido um alert informando o erro para o usuário e os campos/botão devem ser habilitados novamente
     - [x ]  Ao clicar no link para logar, o usuário deve ser redirecionado para a rota `/` (rota de Login)
 - Topo e Menu
-    - [ x]  Topo e menu devem ter posicionamento fixo
+    - [ ]  Topo e menu devem ter posicionamento fixo
     - [ x]  No topo deve ser exibida a foto do usuário conforme layout
         - **OBS**: Utilize **ContextAPI** para compartilhar o estado do usuário logado globalmente entre os componentes.
     - [x ]  No menu, os 3 botões de Hábitos, Hoje e Histórico devem redirecionar o usuário para as rotas `/habitos`, `/hoje` e `/historico` respectivamente

@@ -71,7 +71,7 @@ export default function NotaHoje(){
                         </Info>
                         <Icone
                             disabled={desabilitado}
-                            backgroundColor={elem.done? "#8FC549" : "#E7E7E7"}
+                            background={elem.done? "#8FC549" : "#E7E7E7"}
                             onClick={(e)=>{elem.done? Incompleto(e, elem.id):Completo(e,elem.id)}}
                         >
                             <ion-icon name="checkmark-outline"></ion-icon>

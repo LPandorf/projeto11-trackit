@@ -137,6 +137,7 @@ const Nota=styled.div`
     background: #FFFFFF;
     border-radius: 5px;
     padding:18px;
+    margin-bottom: 15px;
 `
 
 const Cancelar= styled.div`

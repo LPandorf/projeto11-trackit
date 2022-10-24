@@ -2,6 +2,7 @@ import GlobalStyle from "./assets/GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
+
 import Habitos from "./telas/Habitos";
 import Historico from "./telas/Historico";
 import Hoje from "./telas/Hoje";
@@ -26,7 +27,7 @@ export default function App(){
     const [porcentagem,setPorcentagem]=useState(0);
 
     return(
-        <>
+        <Wrapper>
             <InfoLogin.Provider value={{infoLogin, setInfoLogin}}>
                 <HabitosHoje.Provider value={{habitosHoje, setHabitosHoje}}>
                     <ListaHabitos.Provider value={{listaHabitos, setListaHabitos}}>
@@ -49,7 +50,7 @@ export default function App(){
                     </ListaHabitos.Provider>
                 </HabitosHoje.Provider>
             </InfoLogin.Provider>
-        </>
+        </Wrapper>
     )
 
 }   

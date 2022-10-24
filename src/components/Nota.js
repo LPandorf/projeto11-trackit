@@ -110,6 +110,7 @@ const Habito=styled.div`
     background: #FFFFFF;
     border-radius: 5px;
     padding: 10px;
+    margin-bottom:15px;
 `
 const NomeHabito=styled.div`
     width:100%;
