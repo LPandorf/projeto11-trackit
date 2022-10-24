@@ -109,11 +109,10 @@ const Habito=styled.div`
     height: 91px;
     background: #FFFFFF;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 `
 const NomeHabito=styled.div`
-    width:100%
-
+    width:100%;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +126,7 @@ const Nome=styled.div`
     color: #666666;
 `
 const Icone=styled.div`
-    color:red;
+    color:gray;
     width:13px;
     height:15px;
 `

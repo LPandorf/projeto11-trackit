@@ -71,7 +71,7 @@ export default function NotaHoje(){
                         </Info>
                         <Icone
                             disabled={desabilitado}
-                            background={elem.done? "#8FC549" : "#E7E7E7"}
+                            backgroundColor={elem.done? "#8FC549" : "#E7E7E7"}
                             onClick={(e)=>{elem.done? Incompleto(e, elem.id):Completo(e,elem.id)}}
                         >
                             <ion-icon name="checkmark-outline"></ion-icon>
@@ -94,11 +94,14 @@ const Nota= styled.div`
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    padding:10px;
 `
 
 const Info= styled.div`
+    height:80px;
     display: flex;
     flex-direction: column;
+    justify-context:space-between;
 `
 const Titulo= styled.div`
     font-family: 'Lexend Deca';
@@ -109,8 +112,11 @@ const Titulo= styled.div`
     color: #666666;
 `
 const Icone=styled.div`
-    width: 70px;
-    height: 70px;
+    width:70px;
+    heigth:70px;
+    font-size:70px;
+    background: #E7E7E7;
+    color: white;
 `
 const Sequencia= styled.div`
     font-family: 'Lexend Deca';
