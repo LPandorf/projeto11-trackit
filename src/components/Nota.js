@@ -122,4 +122,10 @@ const Nome=styled.div`
     line-height: 25px;
     color: #666666;
 `
-
+const Icone=styled.div`
+    background: #666666;
+    width:13px;
+    height:15px;
+    right:0;
+    top:0;
+`

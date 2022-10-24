@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Renderizarbotao from "./Renderizarbotao";
-import {InfoLogin, AdicionarNovoHabito, NovaRequisicao} from "../Contexts";
-import { warning } from "@remix-run/router";
+import RenderizarBotao from "./RenderizarBotao.js";
+import {InfoLogin, AdicionarHabito, NovaRequisicao} from "../Contexts";
 
 export default function NovaNota(){
     let array = [
@@ -17,7 +16,7 @@ export default function NovaNota(){
     ];
 
     const {infoLogin}=useContext(InfoLogin);
-    const {adicionarNovoHabito,setAdicionarNovoHabito}=useContext(AdicionarNovoHabito);
+    const {adicionarHabito,setAdicionarHabito}=useContext(AdicionarHabito);
     const {novaRequisicao,setNovaRequisicao}=useContext(NovaRequisicao);
 
     const [inserirHabito,setInserirHabito]=useState("");
@@ -27,7 +26,7 @@ export default function NovaNota(){
     const {token}=infoLogin;
 
     function postarNovaNota(e){
-        if(selecionado.length>0 && inserirHabito!=""){
+        if(selecionado.length>0 && inserirHabito!==""){
             setDesabilitado(true);
             e.preventDefault();
             const promisse=axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits",{
@@ -35,11 +34,11 @@ export default function NovaNota(){
                 days:selecionado,
             },{
                 headers: {
-                    'authorization': 'Bearer ${token}'
+                    'authorization': `Bearer ${token}`
                 }
             });
             promisse.then(()=>{
-                setAdicionarNovoHabito(false);
+                setAdicionarHabito(false);
                 setNovaRequisicao(!novaRequisicao);
             });
             promisse.catch((warning)=>{
@@ -51,7 +50,7 @@ export default function NovaNota(){
         }
     }
 
-    if(adicionarNovoHabito===true){
+    if(adicionarHabito===true){
         return (
             <>
                 <Nota>
@@ -85,7 +84,7 @@ export default function NovaNota(){
                                         fontColor="white"
                                         background="#DBDBDB"
                                         onClick={()=>{
-                                            setSelecionado(selecionado.filter((day)=> day!= elem.number))}
+                                            setSelecionado(selecionado.filter((day)=> day!== elem.number))}
                                         }
                                     >
                                         {elem.day}
@@ -95,11 +94,11 @@ export default function NovaNota(){
                         })}
                     </DiasDaSemana>
                     <Botoes>
-                        <Cancelar onClick={()=> setAdicionarNovoHabito(false)}>
+                        <Cancelar onClick={()=> setAdicionarHabito(false)}>
                             Cancelar
                         </Cancelar>
                         <Salvar onClick={(e)=>postarNovaNota(e)}>
-                            Salvar
+                            <RenderizarBotao state={desabilitado} text="Salvar"/>
                         </Salvar>
                     </Botoes>
                 </Nota>
