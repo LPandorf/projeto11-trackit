@@ -25,7 +25,7 @@ export default function Habitos(){
         promisse.catch((warning)=>{
             console.log(warning.response);
         });
-    },[novaRequisicao]);
+    },[novaRequisicao,setListaHabitos,token]);
 
     function AdicionarNota(){
         if(adicionarHabito===true){

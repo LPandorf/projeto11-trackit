@@ -30,7 +30,7 @@ export default function Today(){
         promisse.catch((warning)=>{
             console.log(warning.response);
         });
-    }, [novaRequisicao]);
+    }, [novaRequisicao,setHabitosHoje,token]);
 
     const dayjs=require('dayjs');
     let agora=dayjs();
