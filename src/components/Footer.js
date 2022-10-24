@@ -9,7 +9,7 @@ import AnimatedProgressProvider from "./AnimatedProgressProvider";
 
 export default function Footer(){
     const {porcentagem}=useContext(Porcentagem);
-
+    
     return(
         <Wrapper>
             <Link to={`/habitos`}>
@@ -23,21 +23,25 @@ export default function Footer(){
                         duration={1.4}
                         easingFunction={easeQuadInOut}
                     >
-                        <CircularProgressbar
-                            value={value} 
-                            maxValue={100} 
-                            text="Hoje"
-                            background
-                            backgroundPadding={7}
-                            styles={
-                                buildStyles({
-                                    backgroundColor: "#52b6ff",
-                                    textColor: "#ffffff",
-                                    pathColor: "#ffffff",
-                                    trailColor: "#52b6ff"
-                                })
-                            }
-                        />
+                        {value=>{
+                            return(
+                                <CircularProgressbar
+                                    value={value} 
+                                    maxValue={100} 
+                                    text="Hoje"
+                                    background
+                                    backgroundPadding={7}
+                                    styles={
+                                        buildStyles({
+                                            backgroundColor: "#52b6ff",
+                                            textColor: "#ffffff",
+                                            pathColor: "#ffffff",
+                                            trailColor: "#52b6ff"
+                                        })
+                                    }
+                                />
+                            );
+                        }}
                     </AnimatedProgressProvider>
                 </Link>
             </BarraCircular>

@@ -17,7 +17,8 @@ export default function Login(){
 
     const navigate = useNavigate();
 
-    function OnSubmit(e){
+    function DoLogin(e){
+        console.log("entrou");
         setDesabilitado(true);
         e.preventDefault();
         const promisse=axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",{
@@ -31,7 +32,7 @@ export default function Login(){
                 name: answer.data.name,
             })
         ); setInfoLogin(answer.data);
-            navigate('/habitos');
+            navigate('/hoje');
         });
         promisse.catch((warning)=>{
             alert("Erro! Tente novamente.");
@@ -42,29 +43,27 @@ export default function Login(){
     return (
         <>
             <Logo/>
-            <Wrapper onSubmit={OnSubmit}>
-                <Input
-                    disabled={desabilitado}
+            <Wrapper onSubmit={DoLogin}>
+                <Input               
                     placeholder="email"
                     type="email"
                     value={email}
                     required
                     onChange={(e)=> setInfos({...infos, email: e.target.value})}
-                />
+                ></Input>
                 <Input
-                    disabled={desabilitado}
+                    
                     placeholder="senha"
                     type="password"
                     value={password}
                     required
                     onChange={(e)=> setInfos({...infos, password: e.target.value})}
-                />
-                <Botao 
-                    disabled={desabilitado}
+                ></Input>
+                <button
                     type="submit"
                 >
-                    <Renderizarbotao state={desabilitado} text="Entrar"/>
-                </Botao>
+                    Entrar
+                </button>
             </Wrapper>
             <Link to={`/cadastro`} >
                 <Cadastrar>Não tem uma conta? Cadastre-se!</Cadastrar>
@@ -73,7 +72,7 @@ export default function Login(){
     )
 
 }
-
+//<Renderizarbotao state={desabilitado} text="Entrar"/>
 const Cadastrar=styled.div`
     font-family: 'Lexend Deca';
     font-style: normal;
@@ -85,22 +84,23 @@ const Cadastrar=styled.div`
     color: #52B6FF;
     margin-top: 30px;
 `
-const Botao=styled.div`
-	color: white;
-	background: #52B6FF;
-	border-radius: 5px;
-    width: 303px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-`
-const Wrapper=styled.div`
+
+const Wrapper=styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    button{
+        color: white;
+        background: #52B6FF;
+        border-radius: 5px;
+        width: 303px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 `
 const Input=styled.input`
     width: 303px;

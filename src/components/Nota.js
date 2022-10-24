@@ -113,6 +113,10 @@ const Habito=styled.div`
 `
 const NomeHabito=styled.div`
     width:100%
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 `
 const Nome=styled.div`
     font-family: 'Lexend Deca';
@@ -123,9 +127,7 @@ const Nome=styled.div`
     color: #666666;
 `
 const Icone=styled.div`
-    background: #666666;
+    color:red;
     width:13px;
     height:15px;
-    right:0;
-    top:0;
 `

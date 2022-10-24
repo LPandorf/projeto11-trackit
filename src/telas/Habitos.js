@@ -1,7 +1,7 @@
 import axios from "axios";
 import styled from "styled-components";
 import { useContext, useEffect } from "react";
-import {InfoLogin,AdicionarHabito,ListaHabitos,NovaRequisicao} from "../Contexts";
+import {InfoLogin, AdicionarHabito, ListaHabitos, NovaRequisicao} from "../Contexts";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Nota from "../components/Nota";
@@ -69,7 +69,7 @@ export default function Habitos(){
         </>
     )
 }
-
+//
 const Nenhum= styled.div`
     font-family: 'Lexend Deca';
     font-style: normal;
@@ -131,5 +131,9 @@ const Novos=styled.div`
     line-height: 25px;
     color: #666666;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
 `
 

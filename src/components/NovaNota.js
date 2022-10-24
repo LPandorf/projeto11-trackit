@@ -136,7 +136,6 @@ const Nota=styled.div`
     height: 180px;
     background: #FFFFFF;
     border-radius: 5px;
-    margin-bottom: 20px;
     padding:18px;
 `
 
@@ -181,7 +180,7 @@ const DiasDaSemana= styled.div`
     margin-right: 5px;
 `
 
-const Habito= styled.div`
+const Habito= styled.input`
     margin-bottom: 10px;
     box-sizing: border-box;
     width: 303px;

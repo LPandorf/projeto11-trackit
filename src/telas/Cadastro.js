@@ -69,12 +69,12 @@ export default function Cadastro(){
                     required
                     onChange={(e)=>setInfoCadastro({...infoCadastro,image: e.target.value})}
                 />
-                <Botao 
+                <button 
                     disabled={desabilitado}
                     type="submit"
                 >
                     <Renderizarbotao state={desabilitado} text="Cadastrar"/>
-                </Botao>
+                </button>
                 <Link to={`/`}>
                     <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
                 </Link>
@@ -83,24 +83,24 @@ export default function Cadastro(){
     )
 }
 
-const Wrapper=styled.div`
+const Wrapper=styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    button{
+        color: white;
+        background: #52B6FF;
+        border-radius: 5px;
+        width: 303px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 `
 
-const Botao=styled.div`
-	color: white;
-	background: #52B6FF;
-	border-radius: 5px;
-    width: 303px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-`
 const Cadastrar=styled.div`
 `
 const Cadastrado=styled.div`
