@@ -73,7 +73,7 @@ export default function Cadastro(){
                     disabled={desabilitado}
                     type="submit"
                 >
-                    <Renderizarbotao state={desabilitado} text="Entrar"/>
+                    <Renderizarbotao state={desabilitado} text="Cadastrar"/>
                 </Botao>
                 <Link to={`/`}>
                     <Cadastrado>Já tem uma conta? Faça login!</Cadastrado>
