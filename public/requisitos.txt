@@ -1,4 +1,4 @@
-# Requisitos
+# Requisitos primeira tentativa (excluída)
 
 - Geral
     - [X]  Manipule o HTML usando somente React (você não deve manipular o DOM diretamente com `querySelector`, `innerHTML`, `classList`)

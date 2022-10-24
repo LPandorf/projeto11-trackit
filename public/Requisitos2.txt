@@ -1,4 +1,4 @@
-# Requisitos
+# Requisitos segunda tentativa (atual)
 
 - Geral
     - [ x]  Manipule o HTML usando somente React (você não deve manipular o DOM diretamente com `querySelector`, `innerHTML`, `classList`)
@@ -9,7 +9,7 @@
     - [ x]  Para os demais estados que não forem globais (necessários para muitos elementos da aplicação), você pode continuar utilizando estados e props 😄
     - [x ]  Obrigatório fazer deploy
 - Layout
-    - [x ]  Aplicar layout, seguindo figma fornecido
+    - [ ]  Aplicar layout, seguindo figma fornecido
         
         [TrackIt](https://www.figma.com/file/3r8MSf9dIPuFlvZHuHTZXF/TrackIt?node-id=0%3A1)
         
@@ -57,3 +57,12 @@
     - [ ]  Caso a sequência atual seja igual ao recorde do usuário, este também deve ser exibido em verde
 - Tela Histórico (rota `/historico`)
     - [ x]  Deve ser exibido o texto conforme layout
+
+
+    # Problemas
+
+    -carregamento dos ion icons
+        #Erros decorrentes:
+            -funções decorrente de click em icones ( apagar habito, marcar e desmarcar como concluido)
+    
+    -separação dos habitos em habitos
